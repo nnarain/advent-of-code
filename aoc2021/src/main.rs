@@ -12,7 +12,8 @@ use std::error::Error;
 
 #[derive(Parser)]
 enum Days {
-    Day1(day1::Options),
+    Day1(aoc2021::Options),
+    Day2(aoc2021::Options),
 }
 
 #[derive(Parser)]
@@ -27,5 +28,6 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     match opts.day {
         Days::Day1(opts) => day1::run(opts),
+        Days::Day2(opts) => day2::run(opts),
     }
 }

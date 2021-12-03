@@ -5,33 +5,10 @@
 // @date Dec 01 2021
 //
 
-use clap::Parser;
-
-use std::str::FromStr;
 use std::path::PathBuf;
 use std::error::Error;
 
-enum Part {
-    PartOne, PartTwo,
-}
-
-impl FromStr for Part {
-    type Err = &'static str;
-
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        match s {
-            "part1" => Ok(Part::PartOne),
-            "part2" => Ok(Part::PartTwo),
-            _ => Err("no match"),
-        }
-    }
-}
-
-#[derive(Parser)]
-pub struct Options {
-    part: Part,
-    input: String,
-}
+use crate::{Options, Part};
 
 pub fn run(opts: Options) -> Result<(), Box<dyn Error>> {
     // Input file path
