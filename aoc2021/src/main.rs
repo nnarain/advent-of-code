@@ -15,6 +15,7 @@ enum Days {
     Day1(aoc2021::Options),
     Day2(aoc2021::Options),
     Day3(aoc2021::Options),
+    Day4(aoc2021::Options),
 }
 
 #[derive(Parser)]
@@ -31,5 +32,6 @@ fn main() -> Result<(), Box<dyn Error>> {
         Days::Day1(opts) => day1::run(opts),
         Days::Day2(opts) => day2::run(opts),
         Days::Day3(opts) => day3::run(opts),
+        Days::Day4(opts) => day4::run(opts),
     }
 }
